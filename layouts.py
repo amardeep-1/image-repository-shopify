@@ -152,7 +152,7 @@ add_page = html.Div([
         html.H4('Select the images you want to upload'),
         dcc.Upload(
             id='upload-image',
-            accept="image/x-png,image/gif,image/jpeg",
+            accept="image/png,image/gif,image/jpeg",
             children=html.Div([
                 'Drag and Drop or ',
                 html.A('Click to Select Files')
