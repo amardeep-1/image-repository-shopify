@@ -27,6 +27,6 @@ def create_users_table():
 create_users_table()
 
 
-os.mkdir('assets')
-os.mkdir('assets\\public_images\\')
-os.mkdir('assets\\user_images\\')
+# os.mkdir('assets')
+# os.mkdir('assets\\public_images\\')
+# os.mkdir('assets\\user_images\\')
