@@ -1,9 +1,11 @@
+#Dash imports
 import dash
 from dash.dependencies import Input, Output, State
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 
+#SQL/Flask imports
 import sqlite3
 from sqlalchemy import Table, create_engine
 from sqlalchemy.sql import select
@@ -58,18 +60,17 @@ db.init_app(server)
 login_manager = LoginManager()
 login_manager.init_app(server)
 login_manager.login_view = '/login'
-#User as base
 # Create User class with UserMixin
 class Users(UserMixin, Users):
     pass
 
-
+#sets page content based on path
 app.layout= html.Div([
     html.Div(id='page-content', className='content')
     ,  dcc.Location(id='url', refresh=False)
 ])
 
-
+# funtions to return images
 def parse_contents(contents, filename, date):
     return html.Div([
         html.H5(filename),
@@ -106,13 +107,13 @@ def parse_contents_search_p(filename,user):
         )
     ])
 
+#funtions for saving images
 def save_file_public(name, content, user):
     if not os.path.exists(os.path.join('assets\\public_images\\', user)):
         os.mkdir(os.path.join('assets\\public_images\\', user))
     data = content.encode("utf8").split(b";base64,")[1]
     with open(os.path.join('assets\\public_images\\'+user+'\\', name), "wb") as fp:
         fp.write(base64.decodebytes(data))
-
 def save_file_private(name, content, user):
     if not os.path.exists(os.path.join('assets\\user_images\\', user)):
         os.mkdir(os.path.join('assets\\user_images\\', user))
