@@ -2,11 +2,7 @@
 This is what I made for the Summer 2021 - Shopify Developer Intern Challenge Question. The task was to build an image repository using any technology you want.
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
-
-```bash
-pip3 install -r requirements.txt
-```
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements found in the requirements.txt.
 
 ## Usage
 ```bash
